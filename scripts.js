@@ -1,10 +1,12 @@
-const display = document.querySelector('.display #display-text');
-const resetBtn = document.querySelector('#reset');
+const calculator = document.querySelector('.calculator');
+const displayText = document.querySelector('.display-text');
+const buttons = document.querySelectorAll('.buttons-container');
+const resetBtn = document.querySelector('.reset');
 const numpad = document.querySelector('.numpad');
 const operators = document.querySelector('.operators');
 
 function initCalculator() {
-    display.textContent = 'Mathematics strikes back';
+    displayText.textContent = 'Mathematics strikes back.';
 }
 
 window.onload = initCalculator();
@@ -29,6 +31,7 @@ function mult(x, y) {
 
 function operate(op, x, y) {
     let result = 0;
+
     if (op == '+') {
         result = add(x, y);
     }
@@ -41,5 +44,6 @@ function operate(op, x, y) {
     if (op == '*') {
         result = mult(x, y);
     }
+
     return result;
 }

@@ -3,19 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Do the Math</title>
     <link href="style.css" rel="stylesheet">
     <script src="scripts.js" defer></script>
   </head>
   <body>
     <div class="calculator">
       <div class="display">
-        <p id="display-text"></p>
+        <p class="display-text"></p>
       </div>
-      <div class="buttons">
-        <button id="reset">C</button>
-        <div class="numpad"></div>
-        <div class="operators"></div>
+      <div class="buttons-container">
+        <div class="numpad">
+          <button class="reset-button">C</button>
+          <div>
+            <button class="number-button">1</button>
+            <button class="number-button">2</button>
+            <button class="number-button">3</button>
+          </div>
+          <div>
+            <button class="number-button">4</button>
+            <button class="number-button">5</button>
+            <button class="number-button">6</button>
+          </div>
+          <div>
+            <button class="number-button">7</button>
+            <button class="number-button">8</button>
+            <button class="number-button">9</button>
+          </div>
+          <button class="zero-button">0</button>
+        </div>
+        <div class="operators">
+          <button class="operator-button">/</button>
+          <button class="operator-button">*</button>
+          <button class="operator-button">-</button>
+          <button class="operator-button">+</button>
+          <button class="operator-button">=</button>
+        </div>
       </div>
     </div>
   </body>

@@ -17,40 +17,73 @@ body {
     border-radius: 10px;
     width: 380px;
     margin: auto;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
 }
 
 .display {
-    border-bottom: 2px solid;
-    width: 100%;
-    height: fit-content;
-    align-self: center;
+    border: 2px solid;
+    border-radius: 8px;
+    margin: 10px 10px 0;
+    height: 50px;
     display: flex;
 }
 
-#display-text {
+.display-text {
     font-family: 'ds_digital';
     text-align: right;
-    font-size: 24px;
+    font-size: 26px;
     margin: 8px 8px;
-    align-self: flex-end;
+    align-self: center;
     flex: 1;
 }
 
-.buttons {
-    border: 2px solid;
+.buttons-container {
     border-radius: 10px;
-    height: 200px;
-    margin: 5px;
+    margin: 10px;
+    display: flex;
+    gap: 2px;
+}
+
+.numpad {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex: 3;
+    gap: 2px;
+}
+
+.numpad div {
+    display: flex;
+    gap: 2px;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2px;
 }
 
 button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26px;
+    font-weight: 600;
     background-color: ivory;
     color: tan;
     border: 2px solid;
     border-radius: 8px;
+    height: 50px;
+}
+
+.reset-button,
+.operator-button {
+    font-weight: 1000;
+}
+
+.number-button {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    width: 30px;
 }
