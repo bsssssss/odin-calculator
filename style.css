@@ -41,7 +41,7 @@ body {
 }
 
 .buttons-container {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin: 10px;
     display: flex;
     gap: 2px;
@@ -72,14 +72,21 @@ button {
     font-weight: 600;
     background-color: ivory;
     color: tan;
-    border: 2.5px solid tan;
-    border-radius: 8px;
+    border: 2.5px solid;
+    border-radius: 5px;
     height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.1s
 }
 
 .reset-button,
 .operator-button {
     font-weight: 1000;
+}
+
+.reset-button:hover {
+    color: indianred;
 }
 
 .operator-button {
@@ -88,9 +95,23 @@ button {
     border-color: indianred;
 }
 
+.operator-button:hover {
+    opacity: 0.8;
+}
+
 .number-button {
     flex: 1;
     padding: 0;
     margin: 0;
     width: 30px;
+}
+
+.number-button:hover {
+    color: grey;
+}
+
+button.number-button.zero-button {
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
