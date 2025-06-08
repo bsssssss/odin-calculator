@@ -1,24 +1,40 @@
-const calculator = document.querySelector('.calculator');
 const displayText = document.querySelector('.display-text');
 const buttons = document.querySelectorAll('button');
-const resetBtn = document.querySelector('.reset');
-const numpad = document.querySelector('.numpad');
-const operators = document.querySelector('.operators');
+
+let firstNumber = '';
+let secondNumber = '';
+let operator = '';
 
 function initCalculator() {
-    displayText.textContent = 'Mathematics strikes back.';
+    for (let button of buttons) {
+        button.addEventListener('click', (e) => {
+            handleClicks(button, e);
+        });
+    }
+    updateDisplay('Mathematics strikes back.');
 }
 
-// for (let button of buttons) {
-//     button.addEventListener('mouseover', (e) => {
-//         console.log(`hovering ${e.target}`);
-//         button.style.opacity = 0.5;
-//     });
-//     button.addEventListener('mouseout', (e) => {
-//         console.log(`leaving ${e.target}`);
-//         button.style.opacity = 1;
-//     });
-// }
+function handleClicks(button, event) {
+    if (displayText.textContent != '') {
+        updateDisplay('');
+    }
+}
+
+function isNumber(button) {
+    return button.classList.value.includes('number');
+}
+
+function isReset(button) {
+    return button.classList.value.includes('reset');
+}
+
+function isOperator(button) {
+    return button.classList.value.includes('operator');
+}
+
+function updateDisplay(string) {
+    displayText.textContent = string;
+}
 
 window.onload = initCalculator();
 
