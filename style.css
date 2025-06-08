@@ -13,17 +13,17 @@ body {
 
 .calculator {
     color: tan;
-    border: 2px solid;
+    /* border: 3px solid; */
     border-radius: 10px;
     width: 380px;
     margin: auto;
-    padding-top: 40px;
+    padding: 30px 0 5px;
     display: flex;
     flex-direction: column;
 }
 
 .display {
-    border: 2px solid;
+    border: 2.5px solid;
     border-radius: 8px;
     margin: 10px 10px 0;
     height: 50px;
@@ -31,6 +31,7 @@ body {
 }
 
 .display-text {
+    color: grey;
     font-family: 'ds_digital';
     text-align: right;
     font-size: 26px;
@@ -49,7 +50,7 @@ body {
 .numpad {
     display: flex;
     flex-direction: column;
-    flex: 3;
+    flex: 4;
     gap: 2px;
 }
 
@@ -71,14 +72,20 @@ button {
     font-weight: 600;
     background-color: ivory;
     color: tan;
-    border: 2px solid;
+    border: 2.5px solid tan;
     border-radius: 8px;
-    height: 50px;
+    height: 60px;
 }
 
 .reset-button,
 .operator-button {
     font-weight: 1000;
+}
+
+.operator-button {
+    color: ivory;
+    background-color: indianred;
+    border-color: indianred;
 }
 
 .number-button {
