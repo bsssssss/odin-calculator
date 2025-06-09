@@ -97,13 +97,13 @@ for (let button of operatorButtons) {
 
 const calculateButton = document.querySelector('.calculate-button');
 calculateButton.addEventListener('click', () => {
-    if (isSetLeftOperand && operator.length > 0) {
+    if (isSetLeftOperand && operator.length > 0 && rightOperand.length > 0) {
         let result = operate(operator, leftOperand, rightOperand);
 
         leftOperand = result.toString();
         rightOperand = '';
 
-        updateDisplay(leftOperand.toString());
+        updateDisplay(leftOperand);
     }
 });
 
