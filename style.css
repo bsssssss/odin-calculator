@@ -125,12 +125,11 @@ button {
 
 #last-row-numpad {
     display: flex;
-    /* margin: 0; */
-    /* padding: 0; */
 }
 
 .zero-button {
-    flex: 2;
+    /* little hacky but.. */
+    flex: 2.066;
     padding: 0;
     margin: 0;
 }
