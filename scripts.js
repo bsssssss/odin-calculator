@@ -38,8 +38,6 @@ function updateDisplay(string) {
 
 window.onload = initCalculator();
 
-/* ---------------- Operations ---------------- */
-
 function add(x, y) {
     return x + y;
 }
