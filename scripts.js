@@ -40,6 +40,7 @@ let rightOperand = '';
 let operator = '';
 let isSetLeftOperand = false;
 let isSetRightOperand = false;
+let currentSet = null;
 
 function resetAll() {
     leftOperand = '';
@@ -67,10 +68,12 @@ for (let button of numberButtons) {
 
         if (!isSetLeftOperand) {
             console.log(`left operand not set, adding number to left operand`);
+            currentSet = 'left';
             leftOperand += number;
             updateDisplay(leftOperand);
         } else {
             console.log(`left operand set, adding number to right operand`);
+            currentSet = 'right';
             rightOperand += number;
             updateDisplay(rightOperand);
         }
@@ -108,13 +111,23 @@ const calculateButton = document.querySelector('.calculate-button');
 calculateButton.addEventListener('click', () => {
     if (isSetLeftOperand && operator.length > 0 && rightOperand.length > 0) {
         let result = operate(operator, leftOperand, rightOperand);
-
         if (result) {
             leftOperand = result.toString();
             rightOperand = '';
 
             updateDisplay(leftOperand);
         }
+    }
+});
+
+const returnButton = document.querySelector('.return-button');
+returnButton.addEventListener('click', () => {
+    if (currentSet == 'left') {
+        leftOperand = leftOperand.slice(0, leftOperand.length - 1);
+        updateDisplay(leftOperand);
+    } else if (currentSet == 'right') {
+        rightOperand = rightOperand.slice(0, rightOperand.length - 1);
+        updateDisplay(rightOperand);
     }
 });
 

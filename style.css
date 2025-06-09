@@ -52,6 +52,11 @@ body {
     gap: 2px;
 }
 
+#first-row-numpad,
+#last-row-numpad {
+    display: flex;
+}
+
 .numpad div {
     display: flex;
     gap: 2px;
@@ -83,8 +88,13 @@ button {
     font-weight: 1000;
 }
 
-.reset-button:hover {
+.reset-button:hover,
+.return-button:hover {
     color: indianred;
+}
+
+.reset-button {
+    flex: 2.25;
 }
 
 .operator-button {
@@ -107,8 +117,7 @@ button {
     opacity: 0.8;
 }
 
-.number-button,
-.empty-space-numpad {
+.number-button {
     flex: 1;
     padding: 0;
     margin: 0;
@@ -120,10 +129,6 @@ button {
 
 .empty-button {
     border-color: transparent;
-}
-
-#last-row-numpad {
-    display: flex;
 }
 
 .zero-button {
