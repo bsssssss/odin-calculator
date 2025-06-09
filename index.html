@@ -14,7 +14,9 @@
       </div>
       <div class="buttons-container">
         <div class="numpad">
-          <button class="reset-button">C</button>
+          <div id="first-row-numpad">
+            <button class="reset-button">C</button>
+          </div>
           <div>
             <button class="number-button">1</button>
             <button class="number-button">2</button>
@@ -30,7 +32,11 @@
             <button class="number-button">8</button>
             <button class="number-button">9</button>
           </div>
-          <button class="number-button zero-button">0</button>
+          <div id="last-row-numpad">
+            <!-- <button class="number-button empty-button"></button> -->
+            <button class="number-button zero-button">0</button>
+            <button class="number-button decimal-button">.</button>
+          </div>
         </div>
         <div class="operators">
           <button class="operator-button">/</button>

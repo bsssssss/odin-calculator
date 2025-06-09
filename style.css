@@ -73,9 +73,9 @@ button {
     border: 2.5px solid;
     border-radius: 5px;
     height: 60px;
-    width: 100%;
     box-sizing: border-box;
-    transition: 0.1s
+    transition: 0.1s;
+    flex: 1;
 }
 
 .reset-button,
@@ -107,19 +107,30 @@ button {
     opacity: 0.8;
 }
 
-.number-button {
+.number-button,
+.empty-space-numpad {
     flex: 1;
     padding: 0;
     margin: 0;
-    width: 30px;
+    /* width: 30px; */
 }
 
 .number-button:hover {
     color: grey;
 }
 
-button.number-button.zero-button {
+.empty-button {
+    border-color: transparent;
+}
+
+#last-row-numpad {
+    display: flex;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+.zero-button {
+    flex: 2;
     padding: 0;
     margin: 0;
-    width: 100%;
 }
