@@ -13,7 +13,6 @@ body {
 
 .calculator {
     color: tan;
-    /* border: 3px solid; */
     border-radius: 10px;
     width: 380px;
     margin: auto;
@@ -41,7 +40,6 @@ body {
 }
 
 .buttons-container {
-    /* border-radius: 10px; */
     margin: 10px;
     display: flex;
     gap: 2px;
@@ -96,6 +94,16 @@ button {
 }
 
 .operator-button:hover {
+    opacity: 0.8;
+}
+
+.calculate-button {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+    color: ivory;
+}
+
+.calculate-button:hover {
     opacity: 0.8;
 }
 
