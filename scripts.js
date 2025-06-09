@@ -33,11 +33,6 @@ function updateDisplay(string) {
     displayText.textContent = string;
 }
 
-function initCalculator() {
-    updateDisplay('Mathematics strikes back.');
-}
-window.onload = initCalculator();
-
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', () => {
     console.log('Reset !');
@@ -62,3 +57,8 @@ const calculateButton = document.querySelector('.calculate-button');
 calculateButton.addEventListener('click', () => {
     console.log(`Calculate !`);
 });
+
+function initCalculator() {
+    updateDisplay('Mathematics strikes back.');
+}
+window.onload = initCalculator();
