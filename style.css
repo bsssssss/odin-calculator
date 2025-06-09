@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ds_digital';
-    src: url('/fonts/ds_digital/DS-DIGIB.TTF') format('embedded-opentype'),
-        url('/fonts/ds_digital/DS-DIGIB.TTF') format('woff2'),
-        url('/fonts/ds_digital/DS-DIGIB.TTF') format('woff'),
-        url('/fonts/ds_digital/DS-DIGIB.TTF') format('truetype'),
-        url('/fonts/ds_digital/DS-DIGIB.TTF') format('svg');
+    src: url('./fonts/ds_digital/DS-DIGIB.TTF') format('embedded-opentype'),
+        url('./fonts/ds_digital/DS-DIGIB.TTF') format('woff2'),
+        url('./fonts/ds_digital/DS-DIGIB.TTF') format('woff'),
+        url('./fonts/ds_digital/DS-DIGIB.TTF') format('truetype'),
+        url('./fonts/ds_digital/DS-DIGIB.TTF') format('svg');
 }
 
 body {
