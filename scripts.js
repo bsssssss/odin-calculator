@@ -22,7 +22,12 @@ function operate(op, x, y) {
         result = subtract(x, y);
     }
     if (op == '/') {
-        result = divide(x, y);
+        if (y == 0) {
+            updateDisplay("sorry dave, i can't do that");
+            resetAll();
+        } else {
+            result = divide(x, y);
+        }
     }
     if (op == '*') {
         result = mult(x, y);
@@ -36,6 +41,14 @@ let operator = '';
 let isSetLeftOperand = false;
 let isSetRightOperand = false;
 
+function resetAll() {
+    leftOperand = '';
+    rightOperand = '';
+    operator = '';
+    isSetLeftOperand = false;
+    isSetRightOperand = false;
+}
+
 const displayText = document.querySelector('.display-text');
 function updateDisplay(string) {
     displayText.textContent = string;
@@ -43,11 +56,7 @@ function updateDisplay(string) {
 
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', () => {
-    leftOperand = '';
-    rightOperand = '';
-    operator = '';
-    isSetLeftOperand = false;
-    isSetRightOperand = false;
+    resetAll();
     updateDisplay('');
 });
 
@@ -100,10 +109,12 @@ calculateButton.addEventListener('click', () => {
     if (isSetLeftOperand && operator.length > 0 && rightOperand.length > 0) {
         let result = operate(operator, leftOperand, rightOperand);
 
-        leftOperand = result.toString();
-        rightOperand = '';
+        if (result) {
+            leftOperand = result.toString();
+            rightOperand = '';
 
-        updateDisplay(leftOperand);
+            updateDisplay(leftOperand);
+        }
     }
 });
 
