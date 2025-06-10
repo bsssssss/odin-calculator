@@ -53,7 +53,12 @@ function resetAll() {
 
 const displayText = document.querySelector('.display-text');
 function updateDisplay(string) {
-    displayText.textContent = string;
+    if (string.length >= 25) {
+        let truncString = string.slice(0, 25 - 3) + '...';
+        displayText.textContent = truncString;
+    } else {
+        displayText.textContent = string;
+    }
 }
 
 const resetButton = document.querySelector('.reset-button');
@@ -150,6 +155,6 @@ deleteButton.addEventListener('click', () => {
 });
 
 function initCalculator() {
-    updateDisplay('Mathematics strikes back.');
+    updateDisplay('Mathematics strikes back');
 }
 window.onload = initCalculator();
