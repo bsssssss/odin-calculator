@@ -85,12 +85,12 @@ button {
 }
 
 .reset-button:hover,
-.return-button:hover {
+.delete-button:hover {
     color: indianred;
 }
 
 .reset-button {
-    flex: 2.205;
+    flex: 2.25;
 }
 
 .operator-button {
@@ -113,7 +113,8 @@ button {
     opacity: 0.8;
 }
 
-.number-button {
+.number-button,
+.decimal-button {
     flex: 1;
     padding: 0;
     margin: 0;

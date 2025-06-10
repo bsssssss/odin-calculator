@@ -40,7 +40,7 @@ let rightOperand = '';
 let operator = '';
 let isSetLeftOperand = false;
 let isSetRightOperand = false;
-let currentSet = null;
+let currentState = 'init';
 
 function resetAll() {
     leftOperand = '';
@@ -48,6 +48,7 @@ function resetAll() {
     operator = '';
     isSetLeftOperand = false;
     isSetRightOperand = false;
+    currentState = 'init';
 }
 
 const displayText = document.querySelector('.display-text');
@@ -66,36 +67,50 @@ for (let button of numberButtons) {
     button.addEventListener('click', () => {
         let number = button.textContent;
 
+        if (currentState == 'result') {
+            resetAll();
+        }
+
         if (!isSetLeftOperand) {
-            console.log(`left operand not set, adding number to left operand`);
-            currentSet = 'left';
+            // console.log(`left operand not set, adding number to left operand`);
+            currentState = 'left';
             leftOperand += number;
             updateDisplay(leftOperand);
         } else {
-            console.log(`left operand set, adding number to right operand`);
-            currentSet = 'right';
+            // console.log(`left operand set, adding number to right operand`);
+            currentState = 'right';
             rightOperand += number;
             updateDisplay(rightOperand);
         }
     });
 }
 
+const decimalButton = document.querySelector('.decimal-button');
+
+decimalButton.addEventListener('click', () => {
+    if (currentState == 'left') {
+        if (!leftOperand.includes('.')) {
+            leftOperand += '.';
+            updateDisplay(leftOperand);
+        }
+    }
+    if (currentState == 'right') {
+        if (!rightOperand.includes('.')) {
+            rightOperand += '.';
+            updateDisplay(rightOperand);
+        }
+    }
+});
+
 const operatorButtons = document.querySelectorAll('.operator-button');
+
 for (let button of operatorButtons) {
     button.addEventListener('click', () => {
+        currentState = 'operation';
         if (leftOperand.length > 0) {
-            console.log(`left operand is a number`);
-
             if (!isSetLeftOperand) {
-                console.log(
-                    `left operand is not set, setting it to true now !`
-                );
                 isSetLeftOperand = true;
             } else if (rightOperand.length > 0) {
-                console.log(
-                    `left operand is set and right operand is a number\n\tcalculating...`
-                );
-
                 let result = operate(operator, leftOperand, rightOperand);
                 leftOperand = result.toString();
                 rightOperand = '';
@@ -112,22 +127,25 @@ calculateButton.addEventListener('click', () => {
     if (isSetLeftOperand && operator.length > 0 && rightOperand.length > 0) {
         let result = operate(operator, leftOperand, rightOperand);
         if (result) {
+            currentState = 'result';
             leftOperand = result.toString();
             rightOperand = '';
-
             updateDisplay(leftOperand);
         }
     }
 });
 
-const returnButton = document.querySelector('.return-button');
-returnButton.addEventListener('click', () => {
-    if (currentSet == 'left') {
+const deleteButton = document.querySelector('.delete-button');
+deleteButton.addEventListener('click', () => {
+    if (currentState == 'left') {
         leftOperand = leftOperand.slice(0, leftOperand.length - 1);
         updateDisplay(leftOperand);
-    } else if (currentSet == 'right') {
+    } else if (currentState == 'right') {
         rightOperand = rightOperand.slice(0, rightOperand.length - 1);
         updateDisplay(rightOperand);
+    } else if (currentState == 'result' || currentState == 'init') {
+        resetAll();
+        updateDisplay('');
     }
 });
 
