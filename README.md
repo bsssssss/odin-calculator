@@ -6,3 +6,4 @@ A little calculator application for the odin project.
 - [x] Floating points
 - [x] Reset & delete
 - [ ] Negative numbers
+- [ ] Keyboard input
